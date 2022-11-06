@@ -1,4 +1,4 @@
-const { urlencoded, bodyParser, cors, helmet, contentType } = require('../middlewares')
+const { urlencoded, bodyParser, contentType } = require('../middlewares')
 
 module.exports = (app) => {
   app.use(urlencoded)
