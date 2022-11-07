@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/nav-footer-style.css">
+  <link rel="stylesheet" href="/css/home-style.css">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/c94ff92473.js" crossorigin="anonymous"></script>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+  <%- include('./partials/navbar') %>
+  <div class="container">
+    <h1>
+      Mendes <span>Vilefort</span>
+    </h1>
+    <form action="#" method="POST" class="login">
+      <div class="form-group">
+        <input type="email" class="form-control">
+        <label for="">E-mail</label>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control">
+        <label for="">Senha</label>
+      </div>
+      <div>
+        <a href="#" class="forgot">Esqueceu a senha?</a>
+      </div>
+      <a href="#" class="btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        ENTRAR
+      </a>
+    </form>
+  </div>
+  <%- include('./partials/footer') %>
+</body>
+</html>

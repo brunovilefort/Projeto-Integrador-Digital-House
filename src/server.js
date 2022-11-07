@@ -1,6 +1,8 @@
 require('dotenv').config()
 const { conn } = require('./database')
 const { app } = require('./config/app')
+// eslint-disable-next-line no-unused-vars
+const { Client, Service, Appointments } = require('./database/models')
 const port = process.env.PORT ?? 3000
 
 conn

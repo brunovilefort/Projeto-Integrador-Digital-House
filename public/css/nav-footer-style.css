@@ -11,7 +11,7 @@
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
-  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --light-shadow: 0 2.5px 7.5px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 * {
@@ -158,6 +158,7 @@ Footer
 */
 
 footer {
+  align-self: flex-end;
   max-width: 100vw;
   min-width: 330px;
   background: var(--bg-black);
@@ -169,7 +170,7 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 5px 15px var(--dark-shadow);
+  box-shadow: 0 5px 15px var(--light-shadow);
 }
 .info {
   display: flex;
