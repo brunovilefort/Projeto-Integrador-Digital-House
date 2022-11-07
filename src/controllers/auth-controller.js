@@ -1,6 +1,6 @@
 const { navLinks, socialMedia, dateFooter } = require('../utils/data')
 
-const AuthController = {
+const authController = {
   getLogin: (req, res) => {
     res.render('login', {
       navLinks, socialMedia, dateFooter
@@ -13,4 +13,4 @@ const AuthController = {
   }
 }
 
-module.exports = AuthController
+module.exports = authController
