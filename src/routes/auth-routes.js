@@ -9,7 +9,7 @@ router
 
 router
   .route('/register')
-  .get((req, res) => res.json({ message: 'success register!' }))
+  .get(authController.getRegister)
   .post((req, res) => res.json({ message: 'success register!' }))
 
 router.get('/logout', (req, res) => res.json({ message: 'success logout!' }))

@@ -5,6 +5,11 @@ const AuthController = {
     res.render('login', {
       navLinks, socialMedia, dateFooter
     })
+  },
+  getRegister: (req, res) => {
+    res.render('register', {
+      navLinks, socialMedia, dateFooter
+    })
   }
 }
 
