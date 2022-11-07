@@ -1,6 +1,12 @@
 const AuthController = {
   getLogin: (req, res) => {
-    res.render('login')
+    const navLinks = [
+      { text: 'Agendamento', url: '/scheduling' },
+      { text: 'Serviços', url: '/services' }
+    ]
+    res.render('login', {
+      navLinks
+    })
   }
 }
 

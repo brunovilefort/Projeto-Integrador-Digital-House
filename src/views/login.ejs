@@ -2,11 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>login</title>
+  <title>Login</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/home-style.css">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
+
 <body>
-  <p>ejs</p>
+  <nav class="navbar">
+    <div class="nav-center">
+      <div class="nav-header">
+        <a href="/">
+          <img src="/img/logo-original.svg" alt="logo">
+        </a>
+      </div>
+      <ul>
+        <% navLinks.forEach(link => { %>
+          <li><a href="<%= link.url %>"><%= link.text %></a></li>
+        <% }) %>
+      </ul>
+      <div class="nav-login">
+        <a href="/login">entrar</a>
+      </div>
+    </div>
+  </nav>
 </body>
 </html>
+
