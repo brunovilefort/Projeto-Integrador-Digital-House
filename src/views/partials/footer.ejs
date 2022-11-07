@@ -1,0 +1,23 @@
+<footer>
+    <div class="info">
+      <ul class="info">
+        <% socialMedia.forEach(link => { %>
+        <li>
+          <a href="<%= link.type %>"> <i class="<%= link.icon %>"></i> </a>
+        </li>
+        <% }) %>
+      </ul>
+      <p>
+        Segunda a Sexta - 08:30h às 20:30h
+        <br />
+        Sábados - 08h às 13h
+      </p>
+    </div>
+    <div class="copy">
+      <p>
+        <%- dateFooter %> &copy;
+        <span>MendesVilefort</span>
+      </p>
+      <p>All Rights Reserved</p>
+    </div>
+</footer>

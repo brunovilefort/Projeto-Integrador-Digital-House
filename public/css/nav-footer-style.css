@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+
+:root {
+  --main-color: #eead2d;
+  --white: #fff;
+  --black: #000;
+  --bg-gray: #f1f5f8;
+  --bg-black: #08090c;
+  --font-family: 'Gabriela', serif;
+  --max-width: 100%;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+/*
+===============
+Navbar
+===============
+*/
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+nav {
+  max-width: 100vw;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px var(--bg-black);
+  background: var(--bg-gray);
+}
+.nav-center {
+  width: 90vw;
+  padding: 1.2rem 0 0.5rem 0;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-header a img {
+  width: 250px;
+  height: 100%;
+}
+.nav-toggle {
+  background: transparent;
+  border: transparent;
+  color: var(--clr-primary-5);
+  cursor: pointer;
+}
+.nav-toggle i {
+  font-size: 1.8rem;
+  animation-name: bounce;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  margin-bottom: 5px;
+}
+.nav-links,
+.nav-login {
+  display: none;
+}
+
+@media screen and (min-width: 480px) {
+  .nav-header a img {
+    width: 275px;
+  }
+  .nav-toggle i {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-header a img {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nav-toggle {
+    display: none;
+  }
+  .nav-center {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--black);
+    text-decoration: none;
+    letter-spacing: 0.1rem;
+    padding: 0.5rem;
+    font-size: larger;
+  }
+  .nav-links a:hover {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--main-color);
+  }
+  .nav-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 175px;
+  }
+  .nav-login a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--black);
+  }
+  .nav-login a i {
+    font-size: 1.6rem;
+    color: #eead2d;
+    margin-left: 0.75rem;
+    margin-bottom: 5px;
+  }
+  .nav-login a:hover {
+    font-size: 1.7rem;
+  }
+}
+
+/*
+===============
+Footer
+===============
+*/
+
+footer {
+  max-width: 100vw;
+  min-width: 330px;
+  background: var(--bg-black);
+  color: var(--white);
+  position: relative;
+  height: auto;
+  padding: 10px 3px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px var(--dark-shadow);
+}
+.info {
+  display: flex;
+  align-items: center;
+  padding-right: 2.5%;
+}
+.info ul {
+  flex-direction: column;
+  padding: 1rem;
+  list-style: none;
+  align-self: flex-end;
+  padding-right: 0.5rem;
+  font-size: 1.1rem;
+}
+.info ul a {
+  color: #f7d917;
+}
+.info ul a:hover {
+  font-size: 1.5rem;
+}
+.copy {
+  display: flex;
+  letter-spacing: 0.5px;
+  padding-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.copy span {
+  color: #f7d917;
+  margin: 0.4rem;
+}
+
+@media screen and (min-width: 480px) {
+  footer {
+    padding-bottom: 0rem;
+  }
+  .copy {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    font-size: 1.15rem;
+    height: 10rem
+  }
+  .info {
+    margin: 0 auto;
+  }
+  .copy {
+    min-width: 250px;
+    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+  }
+  .copy:nth-child(1) {
+    word-spacing: 2rem;
+  }
+}

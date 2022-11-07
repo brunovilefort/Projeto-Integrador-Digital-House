@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+
+:root {
+  --main-color: #eead2d;
+  --yellow: #ffff00;
+  --white: #fff;
+  --black: #000;
+  --bg-gray: #f1f5f8;
+  --bg-black: #08090c;
+  --font-family: 'Gabriela', serif;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  height: calc(100vh - 14rem);
+  background-image: url('/img/bg-small-screen.jpeg');
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container h1 {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: var(--bg-gray);
+  text-shadow: 2px 2px var(--black);
+}
+
+.container h1 span {
+  color: var(--main-color);
+}
+
+.login {
+  background: rgba(241, 245, 248, 0.4);
+  border-radius: var(--radius);
+  width: 300px;
+  padding: 20px;
+}
+
+.login .form-group,
+.forgot {
+  position: relative;
+}
+
+.login .form-group input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-bottom: 1.5px solid var(--black);
+  outline: none;
+  background: transparent;
+}
+
+.login .form-group label {
+  text-shadow: 1px 1px var(--black);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  color: var(--white);
+  pointer-events: none;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.login .form-group input:focus ~ label {
+  top: -20px;
+  left: 0;
+  color: var(--main-color);
+  font-size: 1rem;
+}
+
+.login .btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 20px;
+  color: black;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 1.5rem;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.login .btn:hover {
+  background: var(--main-color);
+  color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 0 5px var(--main-color), 0 0 25px var(--main-color), 0 0 50px var(--main-color),
+    0 0 100px var(--main-color);
+}
+
+.login .btn span {
+  position: absolute;
+  display: block;
+}
+
+.login .btn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--main-color));
+  animation: btn1 1s linear infinite;
+}
+
+@keyframes btn1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.login .btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--main-color));
+  animation: btn2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes btn2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.login .btn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--main-color));
+  animation: btn3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes btn3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.login .btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--main-color));
+  animation: btn4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes btn4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+.forgot {
+  font-size: 16px;
+  left: 0;
+  bottom: 0;
+  color: black;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.forgot:hover {
+  font-size: 20px;
+}
