@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/nav-footer-style.css">
+  <link rel="stylesheet" href="/css/appointment-style.css">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/c94ff92473.js" crossorigin="anonymous"></script>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+  <%- include('./partials/navbar') %>
+  <main>
+    <div id="container">
+      <article>
+        <div id="calender">
+          <h2>Calendário</h2>
+        </div>
+        <div id="hours">
+          <div>
+            <h4 id="title">Reserve em quarta feira</h4>
+          </div>
+          
+          <div class="select-hours">
+            <p>13:00</p>
+          </div>
+          
+          <div class="select-hours">
+            <p>14:00</p>
+          </div>
+          
+          <div class="select-hours">
+            <p>15:00</p>
+          </div>
+        </div>
+      </article>
+      <div id="submit">
+        <button class="btn">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Reservar
+        </button>
+      </div>
+    </div>
+  </main>
+  <%- include('./partials/footer') %>
+</body>
+</html>
