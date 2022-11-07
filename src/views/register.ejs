@@ -25,7 +25,7 @@
         <br>
         <p>campos com (*), são obrigatórios</p>
       </div>
-      <form action="">
+      <form action="/register" method="POST">
         <div class="container-fields">
           <label for="">Nome*:</label>
           <input type="text">
@@ -57,13 +57,13 @@
           <li class="error"></li>
         </div>
         <div id="container-btn">
-          <a href="/api/auth/login" class="btn">
+          <button type="submit" class="btn">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             Cadastrar
-          </a>
+          </button>
         </div>
       </form>
     </div>
