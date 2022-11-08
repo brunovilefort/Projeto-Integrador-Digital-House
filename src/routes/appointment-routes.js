@@ -1,12 +1,12 @@
-// const router = require('express').Router()
+const router = require('express').Router()
 
-// const appointmentController = require('../controllers/auth-controller')
+const appointmentController = require('../controllers/appointment-controller')
 
-// router
-//   .route('/appointments')
-//   .get(appointmentController.getDashboard)
+router
+  .route('/appointments')
+  .get(appointmentController.getDashboard)
 //   .post(appointmentController.postDashboard)
 //   .put(appointmentController.putDashboard)
 //   .delete(appointmentController.deleteDashboard)
 
-// module.exports = router
+module.exports = router

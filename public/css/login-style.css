@@ -25,6 +25,18 @@ body {
   height: 100vh;
 }
 
+.message {
+  position: relative;
+  padding: 1rem;
+  color: darkorange;
+  background: var(--bg-gray);
+  border: 1.5px solid var(--black);
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 0 auto 2rem;
+  max-width: 75%;
+}
+
 .container {
   height: calc(100vh - 14rem);
   background-image: url('/img/bg-small-screen.jpeg');

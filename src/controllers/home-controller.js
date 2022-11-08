@@ -8,9 +8,7 @@ const homeController = {
   },
 
   getHome: (req, res) => {
-    res.render('home', {
-      navLinks, socialMedia, dateFooter
-    })
+    res.render('home', { navLinks, socialMedia, dateFooter })
   }
 }
 

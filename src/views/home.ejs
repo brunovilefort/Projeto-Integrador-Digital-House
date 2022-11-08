@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Barbearia MV</title>
     <!-- CSS -->
     <link rel="stylesheet" href="/css/nav-footer-style.css" />
     <link rel="stylesheet" href="/css/home-style.css" />
@@ -35,10 +35,51 @@
 
   <body>
     <%- include('./partials/navbar') %>
-    <main class="section-hero">
-      <img src="/img/bg.svg" class="hero-image" alt="hero image">
-    </main>
+    <section class="section-hero">
+      <div>
+        <h1>Barbearia</h1>
+        <p>Happy Hour, Style and Relaxing.</p>
+        <button type="submit">agende</button>
+      </div>
+    </section>
     <%- include('./partials/cards') %>
+    <hr class="divider-two">
+    <section class="section-contact">
+      <div class="section-contact-center">
+        <article>
+          <div>
+            <h5>
+              <span>
+                <i class="fa-regular fa-paper-plane"></i>
+              </span>
+              Endereço
+            </h5>
+            <h4>
+              R. Amazonas, n° 4839 <br /> - Terreo 8, Osasco
+            </h4>
+          </div>
+          <div>
+            <h5>
+              <span>
+                <i class="fa-regular fa-envelope"></i>
+              </span>
+              E-mail
+            </h5>
+            <h4>mendesvilefort@email.com.br</h4>
+          </div>
+          <div>
+            <h5>
+              <span>
+                <i class="fa-solid fa-phone"></i>
+              </span>
+              Telefone
+            </h5>
+            <h4>+55 (011) 94858-4656</h4>
+          </div>
+        </article>
+        <div class="map"></div>
+      </div>
+    </section>
     <%- include('./partials/footer') %>
   </body>
 </html>
