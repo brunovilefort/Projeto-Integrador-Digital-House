@@ -6,7 +6,6 @@ const dataAtual = new Date()
 dataAtual.toString()
 const disponivel = []
 let marcacoes = []
-const sundayDays = []
 const dataMaxima = addDays(dataAtual, 14)
 
 const periodo = (dataAtual, dataMaxima) => {
@@ -82,6 +81,6 @@ switch (descobrirDiaSemana) {
     break
 }
 
-console.log(sundayDays)
+const hours = disponivel.filter(day => typeof day === 'object')
 
-module.exports = { disponivel, diasPossiveis, diasMes }
+module.exports = { disponivel, diasPossiveis, diasMes, hours }

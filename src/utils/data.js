@@ -59,4 +59,4 @@ const socialMedia = [
   { type: 'instagram', icon: 'fa-brands fa-instagram' }
 ]
 
-module.exports = { socialMedia, navLinks, dateFooter, title }
+module.exports = { socialMedia, navLinks, dateFooter, title, mes }

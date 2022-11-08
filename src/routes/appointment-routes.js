@@ -4,9 +4,12 @@ const appointmentController = require('../controllers/appointment-controller')
 
 router
   .route('/appointments')
-  .get(appointmentController.getDashboard)
-//   .post(appointmentController.postDashboard)
-//   .put(appointmentController.putDashboard)
-//   .delete(appointmentController.deleteDashboard)
+  .get(appointmentController.getDate)
+
+router
+  .route('/appointments/time')
+  .get(appointmentController.getTime)
+
+router.get('appointments/create', appointmentController.getCreate)
 
 module.exports = router

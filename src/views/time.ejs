@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horário</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/nav-footer-style.css" />
+    <link rel="stylesheet" href="/css/time-style.css" />
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/c94ff92473.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/img/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/img/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/img/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script src="/js/appointmensts.js" type="module"></script>
+  </head>
+  <body>
+    <%- include('./partials/navbar') %>
+    <main>
+      <section class="container">
+        <h1 class="title"><%= timeTitle %></h1>
+          <div class="calendar">
+            <form action="/api/appointments/create" method="">
+              <input type="hidden" name="time" id="hidden">
+              <div class="item">Horários</div>
+              <div class="flex-container">
+                <% for( let i = 0; i < result.length; i++ ) { %>
+                  <input type="button" id="<%- [i] %>"  value="<%- result[i] %>" class="times">
+                  <% } %>
+              </div>
+              <div class="submit">
+                <button class="btn" type="submit">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Reservar
+                </button>
+              </div>
+            </form>
+          </div>
+      </section>
+    </main>
+    <%- include('./partials/footer') %>
+  </body>
+</html>
