@@ -4,9 +4,9 @@ const { navLinks, socialMedia, dateFooter } = require('../utils/data')
 const appointmentController = {
   getDashboard: (req, res) => {
     return res.render('appointments', {
-      navLinks, socialMedia, dateFooter
+      navLinks, socialMedia, dateFooter, userLogged: req.session.user
     })
-  }
+  },
   // postDashboard: async (req, res) => {
   //   res.send({ message: 'deu certo' })
   // },
@@ -16,6 +16,11 @@ const appointmentController = {
   // deleteDashboard: async (req, res) => {
   //   res.send({ message: 'deu certo' })
   // }
+  getMyAppointments: (req, res) => {
+    return res.render('myAppointments', {
+      navLinks, socialMedia, dateFooter, userLogged: req.session.user
+    })
+  }
 }
 
 module.exports = appointmentController

@@ -8,5 +8,8 @@ router
 //   .post(appointmentController.postDashboard)
 //   .put(appointmentController.putDashboard)
 //   .delete(appointmentController.deleteDashboard)
+router
+  .route('/myappointments')
+  .get(appointmentController.getMyAppointments)
 
 module.exports = router

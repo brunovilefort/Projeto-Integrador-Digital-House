@@ -7,7 +7,7 @@ router
   .get(homeController.getServices)
 
 router
-  .route('/')
+  .route('')
   .get(homeController.getHome)
 
 module.exports = router

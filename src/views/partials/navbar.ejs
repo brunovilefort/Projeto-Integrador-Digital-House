@@ -14,7 +14,13 @@
       <% }) %>
     </ul>
     <div class="nav-login">
-      <a href="/api/auth/login">entrar <i class="fa-solid fa-user-plus"></i></a>
+      <% if (userLogged) { %>
+        <a href="/api/auth/logout"
+        >sair <i class="fa-solid fa-arrow-right-from-bracket"></i
+        ></a>
+      <%} else { %>
+        <a href="/api/auth/login">entrar <i class="fa-solid fa-user-plus"></i></a>
+      <% } %> 
     </div>
   </div>
 </nav>

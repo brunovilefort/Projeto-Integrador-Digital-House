@@ -36,11 +36,6 @@
   <body>
     <%- include('./partials/navbar') %>
     <div class="container">
-      <div class="message">
-        <% if (messages.message) { %>
-          <p>messages.message</p>
-          <% } %>
-        </div>
 
       <h1>Mendes <span>Vilefort</span></h1>
       <form action="/api/auth/login" method="POST" class="login">

@@ -1,5 +1,5 @@
 const auth = (req, res, next) => {
-  const userId = req.session.user_id
+  const userId = req.session.user
   if (!userId) {
     res.redirect('login')
   }

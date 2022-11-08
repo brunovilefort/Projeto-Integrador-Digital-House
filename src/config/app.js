@@ -2,12 +2,14 @@ const express = require('express')
 const session = require('express-session')
 const FileStore = require('session-file-store')(session)
 const flash = require('express-flash')
+const methodOverride = require('method-override')
 const app = express()
 
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
 
 app.use(express.json())
+app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(
@@ -28,6 +30,7 @@ app.use(
     }
   })
 )
+
 app.use(flash())
 app.use((req, res, next) => {
   if (req.session.user_id) {
