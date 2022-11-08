@@ -19,41 +19,39 @@
 <body>
   <%- include('./partials/navbar') %>
   <main>
+    <!-- <div class="message">
+      <% if (messages.message) { %>
+        <p>messages.message</p>
+      <% } %>
+    </div> -->
     <div id="container-form">
       <div id="title">
         <h2>Formulário de Cadastro</h2>
-        <br>
-        <p>campos com (*), são obrigatórios</p>
       </div>
-      <form action="/register" method="POST">
+      <form action="/api/auth/register" method="POST">
         <div class="container-fields">
-          <label for="">Nome*:</label>
-          <input type="text">
+          <label for="name">Nome:</label>
+          <input type="text" name="name" required>
           <li class="error"></li>
         </div>
         <div class="container-fields">
-          <label for="">Email*:</label>
-          <input type="text" required>
+          <label for="email">E-mail:</label>
+          <input type="text"  name="email" required>
           <li class="error"></li>
         </div>
         <div class="container-fields">
-          <label for="">Data de Nascimento*:</label>
-          <input type="date">
+          <label for="phone">nº Celular:</label>
+          <input type="text" name="phone" required>
           <li class="error"></li>
         </div>
         <div class="container-fields">
-          <label for="">Nº Telefone*:</label>
-          <input type="text">
+          <label for="password">Senha:</label>
+          <input type="password" name="password" required>
           <li class="error"></li>
         </div>
         <div class="container-fields">
-          <label for="">Senha*:</label>
-          <input type="password">
-          <li class="error"></li>
-        </div>
-        <div class="container-fields">
-          <label for="">Confirmação Senha*:</label>
-          <input type="password">
+          <label for="passwordConfirmation">Confirmação Senha:</label>
+          <input type="password" name="passwordConfirmation" required>
           <li class="error"></li>
         </div>
         <div id="container-btn">

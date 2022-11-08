@@ -30,7 +30,7 @@ app.use(
 )
 app.use(flash())
 app.use((req, res, next) => {
-  if (req.session.userId) {
+  if (req.session.user_id) {
     res.locals.session = req.session
   }
   next()

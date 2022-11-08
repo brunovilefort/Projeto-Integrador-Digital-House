@@ -225,7 +225,7 @@ footer {
     font-size: 1.5rem;
     padding: 10px 15px;
     font-size: 1.15rem;
-    height: 10rem
+    height: 10rem;
   }
   .info {
     margin: 0 auto;
@@ -240,4 +240,59 @@ footer {
   .copy:nth-child(1) {
     word-spacing: 2rem;
   }
+}
+
+/*
+===============
+Divider
+===============
+*/
+
+.divider {
+  height: 0.85em;
+  background: linear-gradient(to right, #e98a15, #e9b949, #6d2289);
+}
+
+.divider-two {
+  height: 0.75em;
+  background: linear-gradient(to right, #6d2289, #e9b949, #e98a15);
+}
+
+/*
+===============
+Cards
+===============
+*/
+
+.cards-section {
+  background: #f1f5f8;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.cards-section article {
+  padding: 2.5rem 0;
+  text-align: center;
+  transition: all 0.3s linear;
+  flex-grow: 1;
+}
+
+.cards-section article:hover {
+  background: white;
+  box-shadow: 0 2px red;
+  transform: translateY(-5px);
+}
+
+.cards-section article span {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.3s linear;
+}
+
+.cards-section article p {
+  color: gray;
+  max-width: 17rem;
+  margin: 0 auto;
 }

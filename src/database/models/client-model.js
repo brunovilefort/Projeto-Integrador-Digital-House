@@ -18,16 +18,12 @@ const Client = db.define('Client', {
     type: DataTypes.STRING,
     require: true
   },
-  birth_date: {
-    type: DataTypes.STRING,
-    require: true
-  },
   phone: {
     type: DataTypes.STRING,
     require: true
   },
   password: {
-    type: DataTypes.DATE,
+    type: DataTypes.STRING,
     require: true
   }
 })

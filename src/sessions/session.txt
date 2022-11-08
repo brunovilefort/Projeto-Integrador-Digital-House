@@ -1,0 +1,8 @@
+<!-- <% if (req.session.user_id) { %>
+<a href="/api/auth/logout"
+  >sair <i class="fa-solid fa-arrow-right-from-bracket"></i
+></a>
+< href="/dashboard">agenda <i class="fa-solid fa-chart-line"></i></
+<%} else { %>
+<a href="/api/auth/login">entrar <i class="fa-solid fa-user-plus"></i></a>
+<% } %> -->

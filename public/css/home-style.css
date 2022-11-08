@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&display=swap');
+
+:root {
+  --main-color: #eead2d;
+  --white: #fff;
+  --black: #000;
+  --bg-gray: #f1f5f8;
+  --bg-black: #08090c;
+  --font-family: 'Gabriela', serif;
+  --max-width: 100%;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 2.5px 7.5px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+
+}
+
+.section-hero {
+  width: 100%;
+  margin-bottom: 0;
+  height: calc(100vh - 4rem);
+}
+.hero-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

@@ -3,7 +3,7 @@ const dateFooter = new Date().getFullYear()
 
 const navLinks = [
   { text: 'Agendamento', url: '/scheduling' },
-  { text: 'Serviços', url: '/services' }
+  { text: 'Serviços', url: '/api/services' }
 ]
 
 const socialMedia = [
