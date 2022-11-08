@@ -1,10 +1,11 @@
 // const Appointments = require('../database/models/appointments-model')
-const { navLinks, socialMedia, dateFooter } = require('../utils/data')
+const { navLinks, socialMedia, dateFooter, title } = require('../utils/data')
+const { diasMes } = require('../helpers/index')
 
 const appointmentController = {
   getDashboard: (req, res) => {
     return res.render('appointments', {
-      navLinks, socialMedia, dateFooter, userLogged: req.session.user
+      navLinks, socialMedia, dateFooter, diasMes, title, userLogged: req.session.user
     })
   },
   // postDashboard: async (req, res) => {
