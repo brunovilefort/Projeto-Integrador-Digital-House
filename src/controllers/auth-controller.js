@@ -26,6 +26,7 @@ const authController = {
         navLinks, socialMedia, dateFooter
       })
     }
+    res.redirect('home')
   },
 
   getRegister: (req, res) => {

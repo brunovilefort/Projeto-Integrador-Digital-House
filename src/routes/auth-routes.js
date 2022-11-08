@@ -5,7 +5,7 @@ const authController = require('../controllers/auth-controller')
 router
   .route('/login')
   .get(authController.getLogin)
-  .post((req, res) => res.json({ message: 'success login!' }))
+  .post(authController.postLogin)
 
 router
   .route('/register')
