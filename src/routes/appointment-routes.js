@@ -1,6 +1,8 @@
 const router = require('express').Router()
 
-const appointmentController = require('../controllers/appointment-controller')
+const { appointmentController } = require('../controllers')
+
+router.route('/appointments').get(appointmentController.getDate)
 
 router.route('/appointments').get(appointmentController.getDate)
 //   .post(appointmentController.postDashboard)

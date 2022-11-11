@@ -24,8 +24,7 @@ const appointmentController = {
       socialMedia,
       dateFooter,
       diasMes,
-      title,
-      userLogged: req.session.user
+      title
     })
   },
   getMyAppointments: (req, res) => {
@@ -35,8 +34,7 @@ const appointmentController = {
       diasMes,
       title,
       diasPossiveis,
-      hours,
-      userLogged: req.session.user
+      hours
     })
   },
   getTime: async (req, res) => {
@@ -57,8 +55,7 @@ const appointmentController = {
   getCreate: async (req, res) => {
     try {
       const { dia, time } = await req.query
-      const oldAppointment = { dia, time }
-      await Appointments.create(oldAppointment)
+      await Appointments.create({ dia, time })
       res.redirect('login')
     } catch (error) {
       console.log(error.message)

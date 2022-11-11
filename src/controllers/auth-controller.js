@@ -3,6 +3,8 @@ const { socialMedia, dateFooter } = require('../utils/data')
 
 const bcrypt = require('bcryptjs')
 
+const baseInfo = { socialMedia }
+
 const authController = {
   getLogin: (req, res) => {
     res.render('login', {
@@ -12,7 +14,6 @@ const authController = {
   },
   postLogin: async (req, res) => {
     const { email, password } = req.body
-
     const client = await Client.findOne({ where: { email } })
     if (!client) {
       req.flash('message', 'Usuário não encontrado, tente novamente')
@@ -32,6 +33,7 @@ const authController = {
     req.session.user = client
     res.redirect('/api/auth/userprofile/' + client.user_id)
   },
+
   getUserProfile: async (req, res) => {
     const { id } = req.params
     const clientLogged = await Client.findOne({ where: { user_id: id } })
@@ -78,6 +80,9 @@ const authController = {
           dateFooter
         })
       }
+      if (password !== passwordConfirmation || password.length <= 4) {
+        return res.render('register', baseInfo)
+      }
       const checkClientExists = await Client.findOne({ where: { email } })
       if (checkClientExists) {
         req.flash('message', 'E-mail em uso!')
@@ -97,36 +102,23 @@ const authController = {
         res.redirect('login')
       })
     } catch (error) {
-      console.log(error)
+      console.log(error.message)
     }
   },
+
   userEdit: async (req, res) => {
     const { id } = req.params
     const { name, phone, password } = req.body
-    await Client.update(
-      {
-        name,
-        phone,
-        password
-      },
-      {
-        where: {
-          user_id: id
-        }
-      }
-    )
-
+    await Client.update({ name, phone, password }, { where: { user_id: id } })
     res.redirect('/api/auth/userprofile/' + id)
   },
+
   destroyUser: async (req, res) => {
     const { id } = req.params
-    await Client.destroy({
-      where: {
-        user_id: id
-      }
-    })
+    await Client.destroy({ where: { user_id: id } })
     res.redirect('/api/auth/login')
   },
+
   getLogout: (req, res) => {
     req.session.destroy()
     res.redirect('/')
