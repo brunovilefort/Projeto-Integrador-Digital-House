@@ -1,57 +1,55 @@
-
-const dateFooter = new Date().getFullYear()
-
 const navLinks = [
   { text: 'Agendamento', url: '/api/appointments' },
   { text: 'Serviços', url: '/services' }
 ]
-let mes = new Date().getMonth()
 
-switch (mes) {
+let month = new Date().getMonth()
+
+switch (month) {
   case 0:
-    mes = 'Janeiro'
+    month = 'Janeiro'
     break
   case 1:
-    mes = 'Fevereiro'
+    month = 'Fevereiro'
     break
   case 2:
-    mes = 'Março'
+    month = 'Março'
     break
   case 3:
-    mes = 'Abril'
+    month = 'Abril'
     break
   case 4:
-    mes = 'Maio'
+    month = 'Maio'
     break
   case 5:
-    mes = 'Junho'
+    month = 'Junho'
     break
   case 6:
-    mes = 'Julho'
+    month = 'Julho'
     break
   case 7:
-    mes = 'Agosto'
+    month = 'Agosto'
     break
   case 8:
-    mes = 'Setembro'
+    month = 'Setembro'
     break
   case 9:
-    mes = 'Outubro'
+    month = 'Outubro'
     break
   case 10:
-    mes = 'Novembro'
+    month = 'Novembro'
     break
   case 11:
-    mes = 'Dezembro'
+    month = 'Dezembro'
     break
   default:
     console.log('Mês inválido!')
     break
 }
 
-const ano = new Date().getFullYear()
+const year = new Date().getFullYear()
 
-const title = `${mes} ${ano}`
+const title = `${month} ${year}`
 
 const socialMedia = [
   { type: '/facebook', icon: 'fa-brands fa-facebook' },
@@ -59,4 +57,4 @@ const socialMedia = [
   { type: 'instagram', icon: 'fa-brands fa-instagram' }
 ]
 
-module.exports = { socialMedia, navLinks, dateFooter, title, mes }
+module.exports = { socialMedia, navLinks, title, month, year }

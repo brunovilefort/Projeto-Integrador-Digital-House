@@ -1,73 +1,30 @@
-/* eslint-disable no-undef */
-// const Appointments = require('../database/models/appointments-model')
-const {
-  navLinks,
-  socialMedia,
-  dateFooter,
-  title,
-  mes
-} = require('../utils/data')
-const { diasMes, diasPossiveis, hours } = require('../helpers/index')
-const times = [
-  '08:00',
-  '09:00',
-  '10:00',
-  '11:00',
-  '12:00',
-  '13:00',
-  '14:00',
-  '15:00',
-  '16:00',
-  '17:00',
-  '18:00',
-  '19:00'
-]
-const Appointments = require('../database/models/appointments-model')
+const Appointments = require('../database')
+const { navLinks, socialMedia, year, title, mes } = require('../utils')
+const { daysOfMonth, possibleDays, hours, times } = require('../helpers')
+
+const baseInfo = { navLinks, socialMedia, year }
 
 const appointmentController = {
-  getDate: (req, res) => {
-    return res.render('appointments', {
-      navLinks,
-      socialMedia,
-      dateFooter,
-      diasMes,
-      title,
-      userLogged: req.session.user
-    })
-  },
-  getMyAppointments: (req, res) => {
-    return res.render('myAppointments', {
-      navLinks,
-      socialMedia,
-      dateFooter,
-      diasMes,
-      title,
-      diasPossiveis,
-      hours,
-      userLogged: req.session.user
-    })
-  },
+  getDate: (req, res) => res.render('appointments', baseInfo, daysOfMonth, title, { userLogged: req.session.user }),
+
+  getMyAppointments: (req, res) => res.render('myAppointments', baseInfo, daysOfMonth, title, possibleDays, hours, { userLogged: req.session.user }),
+
   getTime: async (req, res) => {
-    const { dia } = await req.query
-    const timeTitle = `Agende em ${dia} de ${mes}`
-    const appointmentsArray = await Appointments.findAll()
-    const result = times.filter(
-      time => !appointmentsArray.find(appointment => appointment.time === time)
-    )
-    res.render('time', {
-      navLinks,
-      socialMedia,
-      dateFooter,
-      result,
-      timeTitle
-    })
+    try {
+      const { dia } = await req.query
+      const timeTitle = `Agende em ${dia} de ${mes}`
+      const appointmentsArray = await Appointments.findAll()
+      const result = times.filter(time => !appointmentsArray.find(appointment => appointment.time === time))
+      res.render('time', baseInfo, result, timeTitle, { userLogged: req.session.user })
+    } catch (error) {
+      console.log(error.message)
+    }
   },
 
   getCreate: async (req, res) => {
     try {
       const { dia, time } = await req.query
-      const oldAppointment = { dia, time }
-      await Appointments.create(oldAppointment)
+      await Appointments.create({ dia, time })
       res.redirect('login')
     } catch (error) {
       console.log(error.message)
