@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Calendário</title>
     <!-- CSS -->
     <link rel="stylesheet" href="/css/nav-footer-style.css" />
     <link rel="stylesheet" href="/css/appointment-style.css" />
@@ -32,14 +32,16 @@
       href="/img/favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="/site.webmanifest" />
+    <script src="/js/appointmensts.js" type="module"></script>
   </head>
   <body>
     <%- include('./partials/navbar') %>
     <main>
-      <div id="container">
+      <div class="container">
         <h1 class="title"><%= title %></h1>
-        <article>
-          <div id="calender">
+        <div class="calendar">
+          <form action="/api/appointments/time" method="GET">
+            <input type="hidden" name="dia" id="hidden" />
             <div class="grid-container">
               <div class="dom item">dom</div>
               <div class="seg item">seg</div>
@@ -49,36 +51,24 @@
               <div class="sex item">sex</div>
               <div class="sab item">sab</div>
               <% for( let i = 0; i < diasMes.length; i++ ) { %>
-              <span class="dias" value="<%- diasMes[i] %>"><%- diasMes[i] %> </span>
+              <input
+                type="button"
+                id="<%- [i] %>"
+                value="<%- diasMes[i] %>"
+                class="dias"
+              />
               <% } %>
             </div>
-          </div>
-          <div id="hours">
-            <div>
-              <h4 id="title">Reserve em quarta feira</h4>
+            <div class="submit">
+              <button class="btn" type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Reservar
+              </button>
             </div>
-
-            <div class="select-hours">
-              <p>13:00</p>
-            </div>
-
-            <div class="select-hours">
-              <p>14:00</p>
-            </div>
-
-            <div class="select-hours">
-              <p>15:00</p>
-            </div>
-          </div>
-        </article>
-        <div id="submit">
-          <button class="btn">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Reservar
-          </button>
+          </form>
         </div>
       </div>
     </main>

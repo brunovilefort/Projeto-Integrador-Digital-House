@@ -13,12 +13,4 @@ const segSex = [
   { '19:00': false }
 ]
 
-const sab = [
-  { '08:00': false },
-  { '09:00': false },
-  { '10:00': false },
-  { '11:00': false },
-  { '12:00': false }
-]
-
-module.exports = { segSex, sab }
+module.exports = { segSex }
