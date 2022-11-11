@@ -1,12 +1,6 @@
 /* eslint-disable no-undef */
 // const Appointments = require('../database/models/appointments-model')
-const {
-  navLinks,
-  socialMedia,
-  dateFooter,
-  title,
-  mes
-} = require('../utils/data')
+const { socialMedia, dateFooter, title, mes } = require('../utils/data')
 const { diasMes, diasPossiveis, hours } = require('../helpers/index')
 const times = [
   '08:00',
@@ -27,7 +21,6 @@ const Appointments = require('../database/models/appointments-model')
 const appointmentController = {
   getDate: (req, res) => {
     return res.render('appointments', {
-      navLinks,
       socialMedia,
       dateFooter,
       diasMes,
@@ -37,7 +30,6 @@ const appointmentController = {
   },
   getMyAppointments: (req, res) => {
     return res.render('myAppointments', {
-      navLinks,
       socialMedia,
       dateFooter,
       diasMes,
@@ -55,7 +47,6 @@ const appointmentController = {
       time => !appointmentsArray.find(appointment => appointment.time === time)
     )
     res.render('time', {
-      navLinks,
       socialMedia,
       dateFooter,
       result,

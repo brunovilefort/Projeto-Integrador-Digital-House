@@ -62,24 +62,30 @@ Hero
   letter-spacing: 0.1rem;
 }
 .section-hero div button {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   text-shadow: 1px 1.5px black;
   background: rgba(0, 0, 0, 0.5);
   border: 1.5px solid #f7d917;
-  text-transform: uppercase;
-  padding-left: 2em;
-  padding-right: 2em;
+  border-radius: 2px;
+  padding: 2em;
   cursor: pointer;
-  letter-spacing: 3px;
-  font-weight: 600;
-  padding: 0.5rem 1.5rem;
+  transition: 0.3s;
+}
+
+.section-hero div button a {
+  text-decoration: none;
   color: white;
 }
 
 .section-hero div button:hover {
-  font-size: 1.75rem;
+  font-size: 1.4rem;
   transition: all 0.3s linear;
-  border: 1px solid green;
+  border-radius: 5px;
+  text-shadow: none;
+  background-color: var(--main-color);
+  -webkit-box-shadow: 10px 10px 19px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 19px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 19px 0px rgba(0, 0, 0, 0.75);
 }
 
 @media screen and (min-width: 481px) {
@@ -121,13 +127,83 @@ Hero
     padding: 0.75rem 1.75rem;
   }
 }
+/*
+===============
+Carousel
+===============
+*/
+#slide-container {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-gray);
+}
+.slide {
+  padding: 2vh 0 2vh 5vw;
+  display: flex;
+  width: 70vw;
+  margin: auto;
+  justify-content: space-between;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+.slide::-webkit-scrollbar {
+  display: none;
+}
+.card {
+  margin-right: 90px;
+}
+.card img {
+  width: 250px;
+}
+
+.pre-btn,
+.nxt-btn {
+  display: flex;
+  border: 0;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 80px;
+  position: absolute;
+  top: 35%;
+  cursor: pointer;
+  z-index: 9;
+  border-radius: 6px;
+  background-color: initial;
+}
+
+.pre-btn {
+  left: 0;
+  margin-left: 14.9vw;
+}
+
+.nxt-btn {
+  right: 0;
+  margin-right: 14.9vw;
+}
+
+.fa-angle-left,
+.fa-angle-right {
+  font-size: 2.2em;
+}
+
+.pre-btn,
+.nxt-btn {
+  opacity: 0.3;
+}
+
+.pre-btn:hover,
+.nxt-btn:hover {
+  opacity: 0.8;
+  background-color: var(--main-color);
+  color: white;
+}
 
 /*
 ===============
 Contact
 ===============
 */
-
 .section-contact {
   max-width: 100vw;
   display: flex;

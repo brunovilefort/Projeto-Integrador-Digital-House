@@ -1,10 +1,9 @@
 const router = require('express').Router()
 
 const authController = require('../controllers/auth-controller')
-const authMiddleware = require('../middleware/auth')
 
 router
-  .route('/login', authMiddleware)
+  .route('/login')
   .get(authController.getLogin)
   .post(authController.postLogin)
 

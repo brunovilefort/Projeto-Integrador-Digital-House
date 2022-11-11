@@ -2,7 +2,7 @@ const router = require('express').Router()
 
 const appointmentController = require('../controllers/appointment-controller')
 
-router.route('/appointments').get(appointmentController.getDashboard)
+router.route('/appointments').get(appointmentController.getDate)
 //   .post(appointmentController.postDashboard)
 //   .put(appointmentController.putDashboard)
 //   .delete(appointmentController.deleteDashboard)
@@ -13,6 +13,6 @@ router
 
 router.route('/appointments/time').get(appointmentController.getTime)
 
-router.get('appointments/create', appointmentController.getCreate)
+router.get('/appointments/create', appointmentController.getCreate)
 
 module.exports = router

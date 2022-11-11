@@ -9,18 +9,21 @@
       </button>
     </div>
     <ul class="nav-links">
-      <% navLinks.forEach(link => { %>
-      <li><a href="<%= link.url %>"><%= link.text %></a></li>
-      <% }) %>
+      <% if (locals.hasUserLogged) { %>
+      <li><a href="/api/appointments">Agendamento</a></li>
+      <% } else { %>
+      <li><a href="/api/auth/login">Agendamento</a></li>
+      <% } %>
+      <li><a href="/services">Serviços</a></li>
     </ul>
     <div class="nav-login">
-      <% if (userLogged) { %>
-        <a href="/api/auth/logout"
+      <% if (locals.hasUserLogged) { %>
+      <a href="/api/auth/logout"
         >sair <i class="fa-solid fa-arrow-right-from-bracket"></i
-        ></a>
+      ></a>
       <%} else { %>
-        <a href="/api/auth/login">entrar <i class="fa-solid fa-user-plus"></i></a>
-      <% } %> 
+      <a href="/api/auth/login">entrar <i class="fa-solid fa-user-plus"></i></a>
+      <% } %>
     </div>
   </div>
 </nav>

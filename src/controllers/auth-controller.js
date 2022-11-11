@@ -1,15 +1,13 @@
 const Client = require('../database/models/client-model')
-const { navLinks, socialMedia, dateFooter } = require('../utils/data')
+const { socialMedia, dateFooter } = require('../utils/data')
 
 const bcrypt = require('bcryptjs')
 
 const authController = {
   getLogin: (req, res) => {
     res.render('login', {
-      navLinks,
       socialMedia,
-      dateFooter,
-      userLogged: req.session.user
+      dateFooter
     })
   },
   postLogin: async (req, res) => {
@@ -19,41 +17,33 @@ const authController = {
     if (!client) {
       req.flash('message', 'Usuário não encontrado, tente novamente')
       return res.render('login', {
-        navLinks,
         socialMedia,
-        dateFooter,
-        userLogged: req.session.user
+        dateFooter
       })
     }
     const passwordMatch = bcrypt.compareSync(password, client.password)
     if (!passwordMatch) {
       req.flash('message', 'Senha inválida, tente novamente')
       return res.render('login', {
-        navLinks,
         socialMedia,
-        dateFooter,
-        userLogged: req.session.user
+        dateFooter
       })
     }
-    req.session.user = client.user_id
-    res.redirect('/api/auth/userprofile/' + req.session.user)
+    req.session.user = client
+    res.redirect('/api/auth/userprofile/' + client.user_id)
   },
   getUserProfile: async (req, res) => {
     const { id } = req.params
-    const client = await Client.findOne({ where: { user_id: id } })
+    const clientLogged = await Client.findOne({ where: { user_id: id } })
     res.render('userProfile', {
-      userLogged: req.session.user,
-      navLinks,
       socialMedia,
       dateFooter,
-      client
+      clientLogged
     })
   },
 
   getRegister: (req, res) => {
     res.render('register', {
-      userLogged: req.session.user,
-      navLinks,
       socialMedia,
       dateFooter
     })
@@ -73,10 +63,8 @@ const authController = {
         if (field === '' || field === null || field === undefined) {
           req.flash('message', 'Erro de validação, tente novamente')
           return res.render('register', {
-            navLinks,
             socialMedia,
-            dateFooter,
-            userLogged: req.session.user
+            dateFooter
           })
         }
       }
@@ -86,7 +74,6 @@ const authController = {
           'Senhas não conferem ou não possuem 4 digitos, tente novamente'
         )
         return res.render('register', {
-          navLinks,
           socialMedia,
           dateFooter
         })
@@ -95,10 +82,8 @@ const authController = {
       if (checkClientExists) {
         req.flash('message', 'E-mail em uso!')
         return res.render('register', {
-          navLinks,
           socialMedia,
-          dateFooter,
-          userLogged: req.session.user
+          dateFooter
         })
       }
 

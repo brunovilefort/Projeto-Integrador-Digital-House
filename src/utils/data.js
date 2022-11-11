@@ -1,10 +1,5 @@
-
 const dateFooter = new Date().getFullYear()
 
-const navLinks = [
-  { text: 'Agendamento', url: '/api/appointments' },
-  { text: 'Serviços', url: '/services' }
-]
 let mes = new Date().getMonth()
 
 switch (mes) {
@@ -59,4 +54,4 @@ const socialMedia = [
   { type: 'instagram', icon: 'fa-brands fa-instagram' }
 ]
 
-module.exports = { socialMedia, navLinks, dateFooter, title, mes }
+module.exports = { socialMedia, dateFooter, title, mes }

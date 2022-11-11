@@ -35,55 +35,48 @@
 
   <body>
     <%- include('./partials/navbar') %>
-    <div class="container">
-<<<<<<< HEAD
-=======
-      <div class="message">
-        <% if (messages.message) { %>
-          <p>messages.message</p>
-          <% } %>
-        </div>
->>>>>>> 7e2e04bbf86a894518e5cfffb9384f7f588b9e8e
-
-      <h1>Mendes <span>Vilefort</span></h1>
-      <form action="/api/auth/login" method="POST" class="login">
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input
-            type="email"
-            name="email"
-            class="form-control"
-            placeholder="Insira um e-mail já cadastrado"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="password">Senha</label>
-          <input
-            type="password"
-            name="password"
-            class="form-control"
-            placeholder="Insira uma senha já cadastrada"
-            required
-          />
-        </div>
-        <div id="forgot-container">
-          <a href="#" class="forgot">Esqueceu a senha?</a>
-          <p class="forgot">
-            Novo usuário? <a href="/api/auth/register">Cadastre-se</a>
-          </p>
-        </div>
-        <div id="container-btn">
-          <button type="submit" class="btn">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            ENTRAR
-          </button>
-        </div>
-      </form>
-    </div>
+    <main>
+      <div class="container">
+        <h1>Mendes <span>Vilefort</span></h1>
+        <form action="/api/auth/login" method="POST" class="login">
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="Insira um e-mail já cadastrado"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              placeholder="Insira uma senha já cadastrada"
+              required
+            />
+          </div>
+          <div id="forgot-container">
+            <a href="#" class="forgot">Esqueceu a senha?</a>
+            <p class="forgot">
+              Novo usuário? <a href="/api/auth/register">Cadastre-se</a>
+            </p>
+          </div>
+          <div id="container-btn">
+            <button type="submit" class="btn">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              ENTRAR
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
     <%- include('./partials/footer') %>
   </body>
 </html>

@@ -39,11 +39,54 @@
       <div>
         <h1>Barbearia</h1>
         <p>Happy Hour, Style and Relaxing.</p>
-        <button type="submit">agende</button>
+        <% if (locals.hasUserLogged) { %>
+        <button><a href="/api/appointments">Agendar</a></button>
+        <% } else { %>
+        <button><a href="/api/auth/login">Agendar</a></button>
+        <% } %>
       </div>
     </section>
     <%- include('./partials/cards') %>
-    <hr class="divider-two">
+    <hr class="divider-two" />
+    <!-- começo carrousel -->
+    <section id="slide-container">
+      <button class="pre-btn">
+        <i class="fa-solid fa-angle-left"></i>
+      </button>
+      <button class="nxt-btn">
+        <i class="fa-solid fa-angle-right"></i>
+      </button>
+      <div class="slide">
+        <div class="card">
+          <img src="/img/slideImages/barberShop.jpg" alt="" />
+        </div>
+
+        <div class="card">
+          <img src="/img/slideImages/barberShop.jpg" alt="" />
+        </div>
+
+        <div class="card">
+          <img src="/img/slideImages/barberShop.jpg" alt="" />
+        </div>
+
+        <div class="card">
+          <img src="/img/slideImages/barberShop.jpg" alt="" />
+        </div>
+
+        <div class="card">
+          <img src="/img/slideImages/barberShop.jpg" alt="" />
+        </div>
+
+        <div class="card">
+          <img src="/img/slideImages/barberShop.jpg" alt="" />
+        </div>
+
+        <div class="card">
+          <img src="/img/slideImages/barberShop.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- fim carrousel -->
     <section class="section-contact">
       <div class="section-contact-center">
         <article>
@@ -55,7 +98,8 @@
               Endereço
             </h5>
             <h4>
-              R. Amazonas, n° 4839 <br /> - Terreo 8, Osasco
+              R. Amazonas, n° 4839 <br />
+              - Terreo 8, Osasco
             </h4>
           </div>
           <div>
@@ -81,5 +125,6 @@
       </div>
     </section>
     <%- include('./partials/footer') %>
+    <script src="/js/slideImagesHome.js"></script>
   </body>
 </html>

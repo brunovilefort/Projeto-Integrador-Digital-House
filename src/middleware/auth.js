@@ -1,8 +1,11 @@
-const auth = (req, res, next) => {
-  const userId = req.session.user
-  if (!userId) {
-    res.redirect('login')
+const userLogged = (req, res, next) => {
+  res.locals.hasUserLogged = false
+
+  if (req.session.user) {
+    res.locals.hasUserLogged = true
   }
+
+  next()
 }
 
-module.exports = auth
+module.exports = userLogged
