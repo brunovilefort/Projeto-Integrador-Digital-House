@@ -1,77 +1,39 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calendário</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/nav-footer-style.css" />
-    <link rel="stylesheet" href="/css/appointment-style.css" />
-    <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/c94ff92473.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/img/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/img/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/img/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-    <script src="/js/appointmensts.js" type="module"></script>
-  </head>
-  <body>
-    <%- include('./partials/navbar') %>
-    <main>
-      <div class="container">
-        <h1 class="title"><%= title %></h1>
-        <div class="calendar">
-          <form action="/api/appointments/time" method="GET">
-            <input type="hidden" name="dia" id="hidden" />
-            <div class="grid-container">
-              <div class="dom item">dom</div>
-              <div class="seg item">seg</div>
-              <div class="ter item">ter</div>
-              <div class="qua item">qua</div>
-              <div class="qui item">qui</div>
-              <div class="sex item">sex</div>
-              <div class="sab item">sab</div>
-              <% for( let i = 0; i < diasMes.length; i++ ) { %>
-              <input
-                type="button"
-                id="<%- [i] %>"
-                value="<%- diasMes[i] %>"
-                class="dias"
-              />
-              <% } %>
-            </div>
-            <div class="submit">
-              <button class="btn" type="submit">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Reservar
-              </button>
-            </div>
-          </form>
+<%- include('./partials/head', {pageTitle: 'Calendário', cssName:'appointment'}) %>
+<%- include('./partials/navbar') %>
+<main>
+  <div class="container">
+    <h1 class="title"><%= title %></h1>
+    <div class="calendar">
+      <form action="/api/appointments/time" method="GET">
+        <input type="hidden" name="dia" id="hidden" />
+        <div class="grid-container">
+          <div class="dom item">dom</div>
+          <div class="seg item">seg</div>
+          <div class="ter item">ter</div>
+          <div class="qua item">qua</div>
+          <div class="qui item">qui</div>
+          <div class="sex item">sex</div>
+          <div class="sab item">sab</div>
+          <% for( let i = 0; i < diasMes.length; i++ ) { %>
+          <input
+            type="button"
+            id="<%- [i] %>"
+            value="<%- diasMes[i] %>"
+            class="dias"
+          />
+          <% } %>
         </div>
-      </div>
-    </main>
-    <%- include('./partials/footer') %>
-  </body>
-</html>
+        <div class="submit">
+          <button class="btn" type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Reservar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+<%- include('./partials/footer') %>

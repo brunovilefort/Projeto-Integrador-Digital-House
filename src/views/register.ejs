@@ -1,71 +1,46 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- CSS -->
-  <link rel="stylesheet" href="/css/nav-footer-style.css">
-  <link rel="stylesheet" href="/css/register-style.css">
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/c94ff92473.js" crossorigin="anonymous"></script>
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-</head>
-<body>
-  <%- include('./partials/navbar') %>
-  <main>
-    <!-- <div class="message">
-      <% if (messages.message) { %>
-        <p>messages.message</p>
-      <% } %>
-    </div> -->
-    <div id="container-form">
-      <div id="title">
-        <h2>Formulário de Cadastro</h2>
-      </div>
-      <form action="/api/auth/register" method="POST">
-        <div class="container-fields">
-          <label for="name">Nome:</label>
-          <input type="text" name="name" required>
-          <li class="error"></li>
-        </div>
-        <div class="container-fields">
-          <label for="email">E-mail:</label>
-          <input type="text"  name="email" required>
-          <li class="error"></li>
-        </div>
-        <div class="container-fields">
-          <label for="phone">nº Celular:</label>
-          <input type="text" name="phone" required>
-          <li class="error"></li>
-        </div>
-        <div class="container-fields">
-          <label for="password">Senha:</label>
-          <input type="password" name="password" required>
-          <li class="error"></li>
-        </div>
-        <div class="container-fields">
-          <label for="passwordConfirmation">Confirmação Senha:</label>
-          <input type="password" name="passwordConfirmation" required>
-          <li class="error"></li>
-        </div>
-        <div id="container-btn">
-          <button type="submit" class="btn">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Cadastrar
-          </button>
-        </div>
-      </form>
+<%- include('./partials/head', {pageTitle: 'Register', cssName:'register'}) %>
+<%- include('./partials/navbar') %>
+<main>
+  <div id="container-form">
+    <div id="title">
+      <h2>Formulário de Cadastro</h2>
     </div>
-  </main>
-  <%- include('./partials/footer') %>
-</body>
-</html>
+    <form action="/api/auth/register" method="POST">
+      <div class="container-fields">
+        <label for="name">Nome:</label>
+        <input type="text" name="name" required>
+        <li class="error"></li>
+      </div>
+      <div class="container-fields">
+        <label for="email">E-mail:</label>
+        <input type="text"  name="email" required>
+        <li class="error"></li>
+      </div>
+      <div class="container-fields">
+        <label for="phone">nº Celular:</label>
+        <input type="text" name="phone" required>
+        <li class="error"></li>
+      </div>
+      <div class="container-fields">
+        <label for="password">Senha:</label>
+        <input type="password" name="password" required>
+        <li class="error"></li>
+      </div>
+      <div class="container-fields">
+        <label for="passwordConfirmation">Confirmação Senha:</label>
+        <input type="password" name="passwordConfirmation" required>
+        <li class="error"></li>
+      </div>
+      <div id="container-btn">
+        <button type="submit" class="btn">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Cadastrar
+        </button>
+      </div>
+    </form>
+  </div>
+</main>
+<%- include('./partials/footer') %>

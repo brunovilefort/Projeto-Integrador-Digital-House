@@ -1,104 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/nav-footer-style.css" />
-    <link rel="stylesheet" href="/css/service-style.css" />
-    <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/c94ff92473.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/img/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/img/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/img/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-  </head>
-
-  <body>
-    <%- include('./partials/navbar') %>
-    <main class="services">
-      <div class="services-title">
-        <h2>Nossos <span>Serviços</span></h2>
+<%- include('./partials/head', {pageTitle: 'Services', cssName:'service'}) %>
+<%- include('./partials/navbar') %>
+<main class="services">
+  <div class="services-title">
+    <h2>Nossos <span>Serviços</span></h2>
+  </div>
+  <div class="section-center">
+    <article class="service-card">
+      <div class="service-img-container">
+        <img
+          src="/img/cabelo.jpg"
+          class="service-img"
+          alt="single service"
+        />
+        <span class="service-icon">
+          <i class="fas fa-mortar-pestle fa-fw"></i>
+        </span>
       </div>
-      <div class="section-center">
-        <article class="service-card">
-          <div class="service-img-container">
-            <img
-              src="/img/cabelo.jpg"
-              class="service-img"
-              alt="single service"
-            />
-            <span class="service-icon">
-              <i class="fas fa-mortar-pestle fa-fw"></i>
-            </span>
-          </div>
-          <div class="service-info">
-            <h4>Corte</h4>
-            <p>
-              Corte desenhado ou rústico.
-            </p>
-            <a href="#" class="btn service-btn">Agende!</a>
-          </div>
-        </article>
-        <article class="service-card">
-          <div class="service-img-container">
-            <img
-              src="/img/all.jpg"
-              class="service-img"
-              alt="service"
-            />
-            <span class="service-icon">
-              <i class="fa-solid fa-heart"></i>
-            </span>
-          </div>
-          <div class="service-info">
-            <h4>Corte + Barba</h4>
-            <p>
-              Serviço personalidado completo!
-            </p>
-            <a href="#" class="service-btn">Agende!</a>
-          </div>
-        </article>
-        <article class="service-card">
-          <div class="service-img-container">
-            <img
-              src="/img/barba.jpg"
-              class="service-img"
-              alt="service"
-            />
-            <span class="service-icon">
-              <i class="fa-solid fa-whiskey-glass"></i>
-            </span>
-          </div>
-          <div class="service-info">
-            <h4>Barba</h4>
-            <p>
-              Barba ao modo antigo.
-            </p>
-            <a href="#" class="service-btn">Agende!</a>
-          </div>
-        </article>
+      <div class="service-info">
+        <h4>Corte</h4>
+        <p>
+          Corte desenhado ou rústico.
+        </p>
+        <a href="#" class="btn service-btn">Agende!</a>
       </div>
-    </main>
-    <%- include('./partials/footer') %>
-  </body>
-</html>
+    </article>
+    <article class="service-card">
+      <div class="service-img-container">
+        <img
+          src="/img/all.jpg"
+          class="service-img"
+          alt="service"
+        />
+        <span class="service-icon">
+          <i class="fa-solid fa-heart"></i>
+        </span>
+      </div>
+      <div class="service-info">
+        <h4>Corte + Barba</h4>
+        <p>
+          Serviço personalidado completo!
+        </p>
+        <a href="#" class="service-btn">Agende!</a>
+      </div>
+    </article>
+    <article class="service-card">
+      <div class="service-img-container">
+        <img
+          src="/img/barba.jpg"
+          class="service-img"
+          alt="service"
+        />
+        <span class="service-icon">
+          <i class="fa-solid fa-whiskey-glass"></i>
+        </span>
+      </div>
+      <div class="service-info">
+        <h4>Barba</h4>
+        <p>
+          Barba ao modo antigo.
+        </p>
+        <a href="#" class="service-btn">Agende!</a>
+      </div>
+    </article>
+  </div>
+</main>
+<%- include('./partials/footer') %>

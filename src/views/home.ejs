@@ -1,130 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Barbearia MV</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/nav-footer-style.css" />
-    <link rel="stylesheet" href="/css/home-style.css" />
-    <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/c94ff92473.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/img/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/img/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/img/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-  </head>
-
-  <body>
-    <%- include('./partials/navbar') %>
-    <section class="section-hero">
-      <div>
-        <h1>Barbearia</h1>
-        <p>Happy Hour, Style and Relaxing.</p>
-        <% if (locals.hasUserLogged) { %>
-        <button><a href="/api/appointments">Agendar</a></button>
-        <% } else { %>
-        <button><a href="/api/auth/login">Agendar</a></button>
-        <% } %>
+<%- include('./partials/head', {pageTitle: 'Barbearia MV', cssName:'home'}) %>
+<%- include('./partials/navbar') %>
+<main>
+  <section class="section-hero">
+    <div>
+      <h1>Barbearia</h1>
+      <p>Happy Hour, Style and Relaxing.</p>
+      <% if (locals.hasUserLogged) { %>
+      <button><a href="/api/appointments">Agendar</a></button>
+      <% } else { %>
+      <button><a href="/api/auth/login">Agendar</a></button>
+      <% } %>
+    </div>
+  </section>
+  <%- include('./partials/cards') %>
+  <hr class="divider-two" />
+  <!-- começo carrousel -->
+  <section id="slide-container">
+    <button class="pre-btn">
+      <i class="fa-solid fa-angle-left"></i>
+    </button>
+    <button class="nxt-btn">
+      <i class="fa-solid fa-angle-right"></i>
+    </button>
+    <div class="slide">
+      <div class="card">
+        <img src="/img/slideImages/barberShop.jpg" alt="" />
+      </div
+      <div class="card">
+        <img src="/img/slideImages/barberShop.jpg" alt="" />
+      </div
+      <div class="card">
+        <img src="/img/slideImages/barberShop.jpg" alt="" />
+      </div
+      <div class="card">
+        <img src="/img/slideImages/barberShop.jpg" alt="" />
+      </div
+      <div class="card">
+        <img src="/img/slideImages/barberShop.jpg" alt="" />
+      </div
+      <div class="card">
+        <img src="/img/slideImages/barberShop.jpg" alt="" />
+      </div
+      <div class="card">
+        <img src="/img/slideImages/barberShop.jpg" alt="" />
       </div>
-    </section>
-    <%- include('./partials/cards') %>
-    <hr class="divider-two" />
-    <!-- começo carrousel -->
-    <section id="slide-container">
-      <button class="pre-btn">
-        <i class="fa-solid fa-angle-left"></i>
-      </button>
-      <button class="nxt-btn">
-        <i class="fa-solid fa-angle-right"></i>
-      </button>
-      <div class="slide">
-        <div class="card">
-          <img src="/img/slideImages/barberShop.jpg" alt="" />
+    </div>
+  </section>
+  <!-- fim carrousel -->
+  <section class="section-contact">
+    <div class="section-contact-center">
+      <article>
+        <div>
+          <h5>
+            <span>
+              <i class="fa-regular fa-paper-plane"></i>
+            </span>
+            Endereço
+          </h5>
+          <h4>
+            R. Amazonas, n° 4839 <br />
+            - Terreo 8, Osasco
+          </h4>
         </div>
-
-        <div class="card">
-          <img src="/img/slideImages/barberShop.jpg" alt="" />
+        <div>
+          <h5>
+            <span>
+              <i class="fa-regular fa-envelope"></i>
+            </span>
+            E-mail
+          </h5>
+          <h4>mendesvilefort@email.com.br</h4>
         </div>
-
-        <div class="card">
-          <img src="/img/slideImages/barberShop.jpg" alt="" />
+        <div>
+          <h5>
+            <span>
+              <i class="fa-solid fa-phone"></i>
+            </span>
+            Telefone
+          </h5>
+          <h4>+55 (011) 94858-4656</h4>
         </div>
-
-        <div class="card">
-          <img src="/img/slideImages/barberShop.jpg" alt="" />
-        </div>
-
-        <div class="card">
-          <img src="/img/slideImages/barberShop.jpg" alt="" />
-        </div>
-
-        <div class="card">
-          <img src="/img/slideImages/barberShop.jpg" alt="" />
-        </div>
-
-        <div class="card">
-          <img src="/img/slideImages/barberShop.jpg" alt="" />
-        </div>
-      </div>
-    </section>
-    <!-- fim carrousel -->
-    <section class="section-contact">
-      <div class="section-contact-center">
-        <article>
-          <div>
-            <h5>
-              <span>
-                <i class="fa-regular fa-paper-plane"></i>
-              </span>
-              Endereço
-            </h5>
-            <h4>
-              R. Amazonas, n° 4839 <br />
-              - Terreo 8, Osasco
-            </h4>
-          </div>
-          <div>
-            <h5>
-              <span>
-                <i class="fa-regular fa-envelope"></i>
-              </span>
-              E-mail
-            </h5>
-            <h4>mendesvilefort@email.com.br</h4>
-          </div>
-          <div>
-            <h5>
-              <span>
-                <i class="fa-solid fa-phone"></i>
-              </span>
-              Telefone
-            </h5>
-            <h4>+55 (011) 94858-4656</h4>
-          </div>
-        </article>
-        <div class="map"></div>
-      </div>
-    </section>
-    <%- include('./partials/footer') %>
-    <script src="/js/slideImagesHome.js"></script>
-  </body>
-</html>
+      </article>
+      <div class="map"></div>
+    </div>
+  </section>
+  <script src="/js/slideImagesHome.js"></script>
+</main>
+<%- include('./partials/footer') %

@@ -1,82 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/nav-footer-style.css" />
-    <link rel="stylesheet" href="/css/login-style.css" />
-    <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/c94ff92473.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/img/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/img/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/img/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-  </head>
-
-  <body>
-    <%- include('./partials/navbar') %>
-    <main>
-      <div class="container">
-        <h1>Mendes <span>Vilefort</span></h1>
-        <form action="/api/auth/login" method="POST" class="login">
-          <div class="form-group">
-            <label for="email">E-mail</label>
-            <input
-              type="email"
-              name="email"
-              class="form-control"
-              placeholder="Insira um e-mail já cadastrado"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="password">Senha</label>
-            <input
-              type="password"
-              name="password"
-              class="form-control"
-              placeholder="Insira uma senha já cadastrada"
-              required
-            />
-          </div>
-          <div id="forgot-container">
-            <a href="#" class="forgot">Esqueceu a senha?</a>
-            <p class="forgot">
-              Novo usuário? <a href="/api/auth/register">Cadastre-se</a>
-            </p>
-          </div>
-          <div id="container-btn">
-            <button type="submit" class="btn">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              ENTRAR
-            </button>
-          </div>
-        </form>
+<%- include('./partials/head', {pageTitle: 'Login', cssName:'login'}) %>
+<%- include('./partials/navbar') %>
+<main>
+  <div class="container">
+    <h1>Mendes <span>Vilefort</span></h1>
+    <form action="/api/auth/login" method="POST" class="login">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input
+          type="email"
+          name="email"
+          class="form-control"
+          placeholder="Insira um e-mail já cadastrado"
+          required
+        />
       </div>
-    </main>
-    <%- include('./partials/footer') %>
-  </body>
-</html>
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          placeholder="Insira uma senha já cadastrada"
+          required
+        />
+      </div>
+      <div id="forgot-container">
+        <a href="#" class="forgot">Esqueceu a senha?</a>
+        <p class="forgot">
+          Novo usuário? <a href="/api/auth/register">Cadastre-se</a>
+        </p>
+      </div>
+      <div id="container-btn">
+        <button type="submit" class="btn">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          ENTRAR
+        </button>
+      </div>
+    </form>
+  </div>
+</main>
+<%- include('./partials/footer') %>
