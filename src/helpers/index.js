@@ -6,7 +6,7 @@ const {
   startOfMonth,
   lastDayOfMonth
 } = require('date-fns')
-const { segSex, sab } = require('./horarios')
+const { segSex } = require('./schedules')
 
 // Retorna os dias disponíveis nas pŕoximas 3 semanas
 const dataAtual = new Date()
@@ -20,8 +20,7 @@ const periodo = (dataAtual, dataMaxima) => {
   for (let i = 0; i < periodoDias; i++) {
     const dias = addDays(dataAtual, i)
     const diasFormatados = format(dias, 'dd/MM/yyyy')
-    const diaSemana = dias.getDay()
-    diaSemana !== 6 ? (marcacoes = segSex) : (marcacoes = sab)
+    marcacoes = segSex
     disponivel.push(diasFormatados, marcacoes)
 
     if (isSunday(dias)) {
