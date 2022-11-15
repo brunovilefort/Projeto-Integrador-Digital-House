@@ -7,9 +7,11 @@ const homeController = {
       dateFooter
     })
   },
-
   getHome: (req, res) => {
     res.render('home', { socialMedia, dateFooter })
+  },
+  getProducts: (req, res) => {
+    res.render('products', { socialMedia, dateFooter })
   }
 }
 
