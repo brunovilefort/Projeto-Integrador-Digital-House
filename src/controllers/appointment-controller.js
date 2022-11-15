@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 // const Appointments = require('../database/models/appointments-model')
-const { socialMedia, dateFooter, title, mes } = require('../utils/data')
+const { socialMedia, dateFooter, title, mes } = require('../helpers/data')
 const { diasMes, diasPossiveis, hours } = require('../helpers/index')
 const times = [
   '08:00',

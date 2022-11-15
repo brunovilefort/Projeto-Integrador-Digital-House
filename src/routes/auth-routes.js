@@ -1,23 +1,23 @@
 const router = require('express').Router()
 
-const authController = require('../controllers/auth-controller')
+const AuthController = require('../controllers/auth-controller')
 
 router
   .route('/login')
-  .get(authController.getLogin)
-  .post(authController.postLogin)
+  .get(AuthController.getLogin)
+  .post(AuthController.postLogin)
 
 router
   .route('/register')
-  .get(authController.getRegister)
-  .post(authController.postRegister)
+  .get(AuthController.getRegister)
+  .post(AuthController.postRegister)
 
 router
   .route('/userprofile/:id')
-  .get(authController.getUserProfile)
-  .put(authController.userEdit)
-  .delete(authController.destroyUser)
+  .get(AuthController.getUser)
+  .put(AuthController.userEdit)
+  .delete(AuthController.userDestroy)
 
-router.get('/logout', authController.getLogout)
+router.get('/logout', AuthController.getLogout)
 
 module.exports = router

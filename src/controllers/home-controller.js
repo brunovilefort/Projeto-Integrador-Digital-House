@@ -1,18 +1,17 @@
-const { socialMedia, dateFooter } = require('../utils/data')
+const { socialMedia, dateFooter } = require('../helpers/data')
 
-const homeController = {
-  getServices: (req, res) => {
-    res.render('services', {
-      socialMedia,
-      dateFooter
-    })
-  },
-  getHome: (req, res) => {
-    res.render('home', { socialMedia, dateFooter })
-  },
-  getProducts: (req, res) => {
-    res.render('products', { socialMedia, dateFooter })
+class HomeController {
+  getServices (req, res) {
+    return res.render('services', { socialMedia, dateFooter })
+  }
+
+  getHome (req, res) {
+    return res.render('home', { socialMedia, dateFooter })
+  }
+
+  getProducts (req, res) {
+    return res.render('products', { socialMedia, dateFooter })
   }
 }
 
-module.exports = homeController
+module.exports = new HomeController()
