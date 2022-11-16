@@ -1,9 +1,9 @@
-<%- include('./partials/head', {pageTitle: 'Calendário', cssName:'appointment'}) %>
-<%- include('./partials/navbar') %>
+<%- include('./partials/head', {pageTitle: 'Calendário', cssName:'appointment'})
+%> <%- include('./partials/navbar') %>
 <main>
   <div class="container">
-    <h1 class="title"><%= title %></h1>
     <div class="calendar">
+      <h1 class="title"><%= title %></h1>
       <form action="/api/appointments/time" method="GET">
         <input type="hidden" name="dia" id="hidden" />
         <div class="grid-container">
@@ -32,6 +32,23 @@
             Reservar
           </button>
         </div>
+      </form>
+    </div>
+    <div id="hours-container">
+      <h1 class="title">Horários disponíveis</h1>
+      <form action="">
+        <input class="hour" type="button" value="8:00" />
+        <input class="hour" type="button" value="9:00" />
+        <input class="hour" type="button" value="10:00" />
+        <input class="hour" type="button" value="11:00" />
+        <input class="hour" type="button" value="12:00" />
+        <input class="hour" type="button" value="13:00" />
+        <input class="hour" type="button" value="13:00" />
+        <input class="hour" type="button" value="13:00" />
+        <input class="hour" type="button" value="13:00" />
+        <input class="hour" type="button" value="13:00" />
+        <input class="hour" type="button" value="13:00" />
+        <input class="hour" type="button" value="13:00" />
       </form>
     </div>
   </div>
